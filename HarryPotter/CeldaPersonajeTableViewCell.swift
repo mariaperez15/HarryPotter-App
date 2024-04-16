@@ -10,6 +10,7 @@ import UIKit
 class CeldaPersonajeTableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var genderPersonaje: UILabel!
     @IBOutlet weak var housePersonaje: UILabel!
     @IBOutlet weak var imagenPersonaje: UIImageView!

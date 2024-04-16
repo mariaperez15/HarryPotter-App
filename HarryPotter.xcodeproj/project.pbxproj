@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E854E63AAC9900187F88B42 /* Pods_HarryPotter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1BB098ECB2970FDACEF141 /* Pods_HarryPotter.framework */; };
+		FC780C2B2BCDCE5E008CC4CF /* HarryPotterDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC780C292BCDCE5D008CC4CF /* HarryPotterDataModel.xcdatamodeld */; };
 		FCBC9CD12BBF479C0060BDD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC9CD02BBF479C0060BDD1 /* AppDelegate.swift */; };
 		FCBC9CD32BBF479C0060BDD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC9CD22BBF479C0060BDD1 /* SceneDelegate.swift */; };
 		FCBC9CD52BBF479C0060BDD1 /* HarryPotterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC9CD42BBF479C0060BDD1 /* HarryPotterViewController.swift */; };
@@ -21,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71247A6FD577006ABB9A01BA /* Pods-HarryPotter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarryPotter.release.xcconfig"; path = "Target Support Files/Pods-HarryPotter/Pods-HarryPotter.release.xcconfig"; sourceTree = "<group>"; };
+		9F5B7A39CDE106C21627FF4C /* Pods-HarryPotter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarryPotter.debug.xcconfig"; path = "Target Support Files/Pods-HarryPotter/Pods-HarryPotter.debug.xcconfig"; sourceTree = "<group>"; };
+		DE1BB098ECB2970FDACEF141 /* Pods_HarryPotter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarryPotter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC780C2A2BCDCE5D008CC4CF /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
 		FCBC9CCD2BBF479C0060BDD1 /* HarryPotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarryPotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBC9CD02BBF479C0060BDD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCBC9CD22BBF479C0060BDD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E854E63AAC9900187F88B42 /* Pods_HarryPotter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34354705E9F1C7030D27001A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F5B7A39CDE106C21627FF4C /* Pods-HarryPotter.debug.xcconfig */,
+				71247A6FD577006ABB9A01BA /* Pods-HarryPotter.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D3ACE534B4E5D39DF163EE9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE1BB098ECB2970FDACEF141 /* Pods_HarryPotter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FCBC9CC42BBF479C0060BDD1 = {
 			isa = PBXGroup;
 			children = (
 				FCBC9CCF2BBF479C0060BDD1 /* HarryPotter */,
 				FCBC9CCE2BBF479C0060BDD1 /* Products */,
+				34354705E9F1C7030D27001A /* Pods */,
+				D3ACE534B4E5D39DF163EE9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +104,7 @@
 				FCBC9CE82BBF4EA10060BDD1 /* CeldaPersonajeTableViewCell.swift */,
 				FCBC9CE92BBF4EA10060BDD1 /* CeldaPersonajeTableViewCell.xib */,
 				FCBC9CEC2BC469440060BDD1 /* DetallePersonajeViewController.swift */,
+				FC780C292BCDCE5D008CC4CF /* HarryPotterDataModel.xcdatamodeld */,
 			);
 			path = HarryPotter;
 			sourceTree = "<group>";
@@ -89,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCBC9CE12BBF479D0060BDD1 /* Build configuration list for PBXNativeTarget "HarryPotter" */;
 			buildPhases = (
+				134B547262197FB6D8AC3399 /* [CP] Check Pods Manifest.lock */,
 				FCBC9CC92BBF479C0060BDD1 /* Sources */,
 				FCBC9CCA2BBF479C0060BDD1 /* Frameworks */,
 				FCBC9CCB2BBF479C0060BDD1 /* Resources */,
+				EC759F00289B1219481FC059 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,12 +178,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		134B547262197FB6D8AC3399 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HarryPotter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC759F00289B1219481FC059 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HarryPotter/Pods-HarryPotter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HarryPotter/Pods-HarryPotter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HarryPotter/Pods-HarryPotter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FCBC9CC92BBF479C0060BDD1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FCBC9CE72BBF4AB50060BDD1 /* DatosPersonaje.swift in Sources */,
+				FC780C2B2BCDCE5E008CC4CF /* HarryPotterDataModel.xcdatamodeld in Sources */,
 				FCBC9CEA2BBF4EA10060BDD1 /* CeldaPersonajeTableViewCell.swift in Sources */,
 				FCBC9CD52BBF479C0060BDD1 /* HarryPotterViewController.swift in Sources */,
 				FCBC9CD12BBF479C0060BDD1 /* AppDelegate.swift in Sources */,
@@ -223,7 +295,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -286,7 +358,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -307,6 +379,7 @@
 		};
 		FCBC9CE22BBF479D0060BDD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F5B7A39CDE106C21627FF4C /* Pods-HarryPotter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -335,6 +408,7 @@
 		};
 		FCBC9CE32BBF479D0060BDD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71247A6FD577006ABB9A01BA /* Pods-HarryPotter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -383,6 +457,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FC780C292BCDCE5D008CC4CF /* HarryPotterDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FC780C2A2BCDCE5D008CC4CF /* dataModel.xcdatamodel */,
+			);
+			currentVersion = FC780C2A2BCDCE5D008CC4CF /* dataModel.xcdatamodel */;
+			path = HarryPotterDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FCBC9CC52BBF479C0060BDD1 /* Project object */;
 }

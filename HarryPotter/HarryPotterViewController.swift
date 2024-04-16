@@ -7,18 +7,19 @@
 
 import UIKit
 
+protocol harryPotterManagerDelegado {
+    func mostrarPersonajesHarryPotter(lista: [Personaje])
+}
+
 class HarryPotterViewController: UIViewController {
     
     
     // MARK: - IBOutlets
-    @IBOutlet weak var searchBarHarryPotter: UISearchBar!
     @IBOutlet weak var searchPersonajeTextField: UITextField!
-    
-    
     @IBOutlet weak var tablaHarryPotter: UITableView!
     
     // MARK: - Variables
-    var harryPotterManager = HarryPotterManager()
+    var harryPotterManager: HarryPotterManager! = nil
     
     var personajes: [Personaje] = []
     
@@ -34,6 +35,10 @@ class HarryPotterViewController: UIViewController {
         
         //registrar nueva celda
         tablaHarryPotter.register(UINib(nibName: "CeldaPersonajeTableViewCell", bundle: nil), forCellReuseIdentifier: "celda")
+        
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            harryPotterManager = HarryPotterManager(container: appDelegate.persistentContainer)
+        }
         
         harryPotterManager.delegado = self
         searchPersonajeTextField.delegate = self
@@ -98,6 +103,10 @@ extension HarryPotterViewController: UITableViewDelegate, UITableViewDataSource 
         celda.nombrePersonaje.text = personajesFilrados[indexPath.row].name
         celda.genderPersonaje.text = "Gender: \(personajesFilrados[indexPath.row].gender)"
         celda.housePersonaje.text =  "House: \(personajesFilrados[indexPath.row].house)"
+        celda.favoriteButton.tag = indexPath.row
+        celda.favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped(_:)), for: .touchUpInside)
+
+        
         
         //celda imagen desde URL
         if let urlString = personajesFilrados[indexPath.row].image as? String {
@@ -116,7 +125,8 @@ extension HarryPotterViewController: UITableViewDelegate, UITableViewDataSource 
         
         return celda
     }
-    
+
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
         personajeSeleccionado = personajesFilrados[indexPath.row]
         
@@ -132,4 +142,23 @@ extension HarryPotterViewController: UITableViewDelegate, UITableViewDataSource 
             verPersonajes.personajeMostrar = personajeSeleccionado
         }
     }
+ 
+    
+    @objc func favoriteButtonTapped(_ sender: UIButton) {
+        print("Botón de favorito presionado")
+            // Obtiene el índice de la celda en la que se encuentra el botón
+            let indexPath = IndexPath(row: sender.tag, section: 0)
+            
+            // Obtiene el personaje correspondiente al índice
+            let personaje = personajesFilrados[indexPath.row]
+            
+            // Llama a la función para guardar el personaje como favorito
+            harryPotterManager.guardarPersonajeFavorito(personaje)
+        
+        harryPotterManager.imprimirPersonajesFavoritos()
+        
+        }
+    
+    
+
 }

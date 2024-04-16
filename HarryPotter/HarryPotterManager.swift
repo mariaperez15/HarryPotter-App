@@ -6,47 +6,73 @@
 //
 
 import Foundation
-
-protocol harryPotterManagerDelegado {
-    func mostrarPersonajesHarryPotter(lista: [Personaje])
-}
+import CoreData
+import Alamofire
 
 struct HarryPotterManager {
     var delegado: harryPotterManagerDelegado?
     
+    let persistentContainer: NSPersistentContainer
+    
+    init(container: NSPersistentContainer) {
+        self.persistentContainer = container
+    }
+    
     func verPersonajes() {
         let urlString = "https://hp-api.onrender.com/api/characters"
         
-        if let url = URL(string: urlString) {
-            let session = URLSession(configuration: .default)
-            
-            let tarea = session.dataTask(with: url) { datos, respuesta, error in
-                if error != nil {
-                    print("Error al obtener datos de la API: ",error?.localizedDescription)
-                }
-                
-                if let datosSeguros = datos {
-                    if let listaPersonajes = self.parsearJSON(datosPersonajes: datosSeguros) {
-                        print("Lista personajes: ", listaPersonajes)
-                        
-                        delegado?.mostrarPersonajesHarryPotter(lista: listaPersonajes)
-                    }
-                }
+        AF.request(urlString).responseDecodable(of: [Personaje].self) { response in
+            switch response.result {
+            case .success(let personajes):
+                self.delegado?.mostrarPersonajesHarryPotter(lista: personajes)
+            case .failure(let error):
+                print("Error al obtener datos de la API: ", error.localizedDescription)
             }
-            tarea.resume()
         }
     }
     
-    func parsearJSON(datosPersonajes: Data) -> [Personaje]? {
-        let decodificador = JSONDecoder()
+    func guardarPersonajeFavorito(_ personaje: Personaje) {
+        let context = persistentContainer.viewContext
+        
+        let personajeFavorito = PersonajeFavorito(context: context)
+        personajeFavorito.id = personaje.id
+        personajeFavorito.name = personaje.name
+        personajeFavorito.house = personaje.house
+        personajeFavorito.actor = personaje.actor
+        personajeFavorito.ancestry = personaje.ancestry
+        personajeFavorito.gender = personaje.gender
+        personajeFavorito.species = personaje.species
+        
         do {
-            let datosDecodificados = try decodificador.decode([Personaje].self, from: datosPersonajes)
-            
-            return datosDecodificados
-            
+            try context.save()
+            print("Personaje favorito '\(personaje.name)' guardado exitosamente")
         } catch {
-            print("Error al decodificar los datos: ", error.localizedDescription)
-            return nil
+            print("Error al guardar el personaje favorito: \(error.localizedDescription)")
         }
     }
+
+    func recuperarPersonajesFavoritos() -> [PersonajeFavorito] {
+        let context = persistentContainer.viewContext
+        
+        do {
+            let personajesFavoritos = try context.fetch(PersonajeFavorito.fetchRequest()) as? [PersonajeFavorito] ?? []
+            return personajesFavoritos
+        } catch {
+            print("Error al recuperar los personajes favoritos: \(error.localizedDescription)")
+            return []
+        }
+    }
+    
+    func imprimirPersonajesFavoritos() {
+        let personajesFavoritos = recuperarPersonajesFavoritos()
+        
+        for personajeFavorito in personajesFavoritos {
+            print("Nombre: \(String(describing: personajeFavorito.name))")
+            print("Casa: \(String(describing: personajeFavorito.house))")
+            // Imprime otros atributos según sea necesario
+            
+            print("------")
+        }
+    }
+    
 }
