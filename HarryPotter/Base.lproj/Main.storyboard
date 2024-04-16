@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hmA-ap-KZZ">
-                                <rect key="frame" x="20" y="113" width="353" height="705"/>
+                                <rect key="frame" x="20" y="113" width="353" height="656"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="🔍 Nombre del personaje" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2cb-Fw-gOh">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
@@ -28,7 +28,7 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                     </textField>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uaJ-PB-TqJ">
-                                        <rect key="frame" x="0.0" y="55" width="353" height="650"/>
+                                        <rect key="frame" x="0.0" y="55" width="353" height="601"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celda" rowHeight="99" id="5xf-Fh-CGe">
@@ -53,7 +53,23 @@
                             <constraint firstItem="hmA-ap-KZZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="pU8-wd-Waw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Personajes" id="rLw-7E-WrT"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Personajes" id="rLw-7E-WrT">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="n7Q-0q-lfu">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="CcH-QJ-CKT">
+                                <rect key="frame" x="284" y="4.6666666666666679" width="93" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Favoritos">
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="iue-0J-zO7" kind="show" id="ffW-ed-dep"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchPersonajeTextField" destination="2cb-Fw-gOh" id="G3J-RM-yQN"/>
                         <outlet property="tablaHarryPotter" destination="uaJ-PB-TqJ" id="M93-Rj-ANr"/>
@@ -159,6 +175,61 @@
             </objects>
             <point key="canvasLocation" x="1927.4809160305342" y="4.9295774647887329"/>
         </scene>
+        <!--Personajes Favoritos-->
+        <scene sceneID="2AF-Di-fhj">
+            <objects>
+                <viewController id="iue-0J-zO7" customClass="FavoritosViewController" customModule="HarryPotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YDC-Aa-rzg">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="axA-yk-So7">
+                                <rect key="frame" x="20" y="113" width="353" height="656"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="🔍 Nombre del personaje" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Its-ET-asz">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="I88-3X-NU2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                    </textField>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bjp-p8-ZWC">
+                                        <rect key="frame" x="0.0" y="55" width="353" height="601"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celda" rowHeight="99" id="iq6-Lf-sRS">
+                                                <rect key="frame" x="0.0" y="50" width="353" height="99"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iq6-Lf-sRS" id="RyO-AL-v0I">
+                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="99"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="O4i-aM-BRv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="O4i-aM-BRv" firstAttribute="trailing" secondItem="axA-yk-So7" secondAttribute="trailing" constant="20" id="HO6-ur-79T"/>
+                            <constraint firstItem="axA-yk-So7" firstAttribute="leading" secondItem="O4i-aM-BRv" secondAttribute="leading" constant="20" id="Wqv-j0-B3a"/>
+                            <constraint firstItem="O4i-aM-BRv" firstAttribute="bottom" secondItem="axA-yk-So7" secondAttribute="bottom" id="oRr-sJ-gSs"/>
+                            <constraint firstItem="axA-yk-So7" firstAttribute="top" secondItem="O4i-aM-BRv" secondAttribute="top" constant="10" id="u0L-2w-Mvg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Personajes Favoritos" id="rVw-Ni-XxM"/>
+                    <connections>
+                        <outlet property="searchbarFavoritos" destination="Its-ET-asz" id="eoa-ob-mJv"/>
+                        <outlet property="tablaFavoritos" destination="bjp-p8-ZWC" id="P5k-ZF-Mv2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FbP-1i-YEJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2716.7938931297708" y="4.9295774647887329"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="m3c-hV-0ZJ">
             <objects>
@@ -181,6 +252,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

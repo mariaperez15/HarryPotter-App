@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9E854E63AAC9900187F88B42 /* Pods_HarryPotter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1BB098ECB2970FDACEF141 /* Pods_HarryPotter.framework */; };
 		FC780C2B2BCDCE5E008CC4CF /* HarryPotterDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC780C292BCDCE5D008CC4CF /* HarryPotterDataModel.xcdatamodeld */; };
+		FC780C332BCF216C008CC4CF /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC780C322BCF216C008CC4CF /* FavoritosViewController.swift */; };
 		FCBC9CD12BBF479C0060BDD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC9CD02BBF479C0060BDD1 /* AppDelegate.swift */; };
 		FCBC9CD32BBF479C0060BDD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC9CD22BBF479C0060BDD1 /* SceneDelegate.swift */; };
 		FCBC9CD52BBF479C0060BDD1 /* HarryPotterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC9CD42BBF479C0060BDD1 /* HarryPotterViewController.swift */; };
@@ -27,6 +28,7 @@
 		9F5B7A39CDE106C21627FF4C /* Pods-HarryPotter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarryPotter.debug.xcconfig"; path = "Target Support Files/Pods-HarryPotter/Pods-HarryPotter.debug.xcconfig"; sourceTree = "<group>"; };
 		DE1BB098ECB2970FDACEF141 /* Pods_HarryPotter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarryPotter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC780C2A2BCDCE5D008CC4CF /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
+		FC780C322BCF216C008CC4CF /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
 		FCBC9CCD2BBF479C0060BDD1 /* HarryPotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarryPotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBC9CD02BBF479C0060BDD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCBC9CD22BBF479C0060BDD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				FCBC9CD02BBF479C0060BDD1 /* AppDelegate.swift */,
 				FCBC9CD22BBF479C0060BDD1 /* SceneDelegate.swift */,
 				FCBC9CD42BBF479C0060BDD1 /* HarryPotterViewController.swift */,
+				FC780C322BCF216C008CC4CF /* FavoritosViewController.swift */,
 				FCBC9CD62BBF479C0060BDD1 /* Main.storyboard */,
 				FCBC9CD92BBF479D0060BDD1 /* Assets.xcassets */,
 				FCBC9CDB2BBF479D0060BDD1 /* LaunchScreen.storyboard */,
@@ -233,6 +236,7 @@
 				FCBC9CE52BBF4A560060BDD1 /* HarryPotterManager.swift in Sources */,
 				FCBC9CD32BBF479C0060BDD1 /* SceneDelegate.swift in Sources */,
 				FCBC9CED2BC469440060BDD1 /* DetallePersonajeViewController.swift in Sources */,
+				FC780C332BCF216C008CC4CF /* FavoritosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

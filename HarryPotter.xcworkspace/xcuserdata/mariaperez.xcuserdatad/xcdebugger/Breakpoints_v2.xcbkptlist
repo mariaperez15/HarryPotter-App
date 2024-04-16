@@ -250,5 +250,113 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7BC42A87-D4C8-43E9-8995-E5613F949510"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotter/DetallePersonajeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "imagenPersonaje"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "7BC42A87-D4C8-43E9-8995-E5613F949510 - b928e63c3e872e8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarryPotter.DetallePersonajeViewController.namePersonaje.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "HarryPotter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mariaperez/Documents/UPSA/iOS/HarryPotter%20/HarryPotter/DetallePersonajeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "7BC42A87-D4C8-43E9-8995-E5613F949510 - d95cadf0a7688a86"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarryPotter.DetallePersonajeViewController.namePersonaje.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "HarryPotter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mariaperez/Documents/UPSA/iOS/HarryPotter%20/HarryPotter/DetallePersonajeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "7BC42A87-D4C8-43E9-8995-E5613F949510 - c10f010a6ac4906d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarryPotter.DetallePersonajeViewController.namePersonaje.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "HarryPotter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mariaperez/Documents/UPSA/iOS/HarryPotter%20/HarryPotter/DetallePersonajeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "7BC42A87-D4C8-43E9-8995-E5613F949510 - ea889ecf66cb0ff9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarryPotter.DetallePersonajeViewController.namePersonaje.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "HarryPotter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mariaperez/Documents/UPSA/iOS/HarryPotter%20/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "7BC42A87-D4C8-43E9-8995-E5613F949510 - f479338098ecd87d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarryPotter.DetallePersonajeViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; HarryPotter.DetallePersonajeViewController"
+                  moduleName = "HarryPotter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mariaperez/Documents/UPSA/iOS/HarryPotter%20/HarryPotter/DetallePersonajeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "404">
+               </Location>
+               <Location
+                  uuid = "7BC42A87-D4C8-43E9-8995-E5613F949510 - 1838027ec1d0e47a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarryPotter.DetallePersonajeViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HarryPotter.DetallePersonajeViewController&gt;"
+                  moduleName = "HarryPotter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mariaperez/Documents/UPSA/iOS/HarryPotter%20/HarryPotter/DetallePersonajeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "388">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
