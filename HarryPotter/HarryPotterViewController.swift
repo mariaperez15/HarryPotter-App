@@ -146,18 +146,29 @@ extension HarryPotterViewController: UITableViewDelegate, UITableViewDataSource 
     
     @objc func favoriteButtonTapped(_ sender: UIButton) {
         print("Botón de favorito presionado")
-            // Obtiene el índice de la celda en la que se encuentra el botón
-            let indexPath = IndexPath(row: sender.tag, section: 0)
-            
-            // Obtiene el personaje correspondiente al índice
-            let personaje = personajesFilrados[indexPath.row]
-            
-            // Llama a la función para guardar el personaje como favorito
+        
+        let indexPath = IndexPath(row: sender.tag, section: 0)
+        let personaje = personajesFilrados[indexPath.row]
+        
+        // Recupera todos los personajes favoritos
+        let personajesFavoritos = harryPotterManager.recuperarPersonajesFavoritos()
+        
+        // Comprueba si el personaje actual ya está guardado como favorito
+        let personajeFavoritoExistente = personajesFavoritos.first { $0.id == personaje.id }
+        
+        if let personajeFavoritoExistente = personajeFavoritoExistente {
+            // Si el personaje ya está guardado como favorito, lo elimina
+            harryPotterManager.eliminarPersonajeFavorito(withId: personajeFavoritoExistente.id!)
+            print("Personaje favorito eliminado: \(personaje.name)")
+        } else {
+            // Si el personaje no está guardado como favorito, lo guarda
             harryPotterManager.guardarPersonajeFavorito(personaje)
+            print("Personaje favorito guardado: \(personaje.name)")
+        }
         
         harryPotterManager.imprimirPersonajesFavoritos()
-        
-        }
+    }
+
     
     
 
