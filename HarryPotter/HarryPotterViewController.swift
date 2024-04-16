@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 protocol harryPotterManagerDelegado {
     func mostrarPersonajesHarryPotter(lista: [Personaje])
@@ -160,10 +161,12 @@ extension HarryPotterViewController: UITableViewDelegate, UITableViewDataSource 
             // Si el personaje ya está guardado como favorito, lo elimina
             harryPotterManager.eliminarPersonajeFavorito(withId: personajeFavoritoExistente.id!)
             print("Personaje favorito eliminado: \(personaje.name)")
+            view.makeToast("\(personaje.name) eliminado de favoritos")
         } else {
             // Si el personaje no está guardado como favorito, lo guarda
             harryPotterManager.guardarPersonajeFavorito(personaje)
             print("Personaje favorito guardado: \(personaje.name)")
+            view.makeToast("\(personaje.name) guardado como favorito")
         }
         
         harryPotterManager.imprimirPersonajesFavoritos()
