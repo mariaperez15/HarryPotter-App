@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BCU-y0-1tv">
-                        <rect key="frame" x="10" y="3" width="314" height="180.33333333333337"/>
+                        <rect key="frame" x="10" y="3" width="314" height="207"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HarryPotter" translatesAutoresizingMaskIntoConstraints="NO" id="9Ul-2s-rDG">
                                 <rect key="frame" x="0.0" y="0.0" width="314" height="120"/>
@@ -26,13 +26,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harry Potter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kd4-Tz-eWh">
-                                <rect key="frame" x="0.0" y="125" width="314" height="30"/>
+                                <rect key="frame" x="0.0" y="125.00000000000001" width="314" height="56.666666666666671"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XD4-Hj-Fuj">
-                                <rect key="frame" x="0.0" y="160" width="314" height="20.333333333333343"/>
+                                <rect key="frame" x="0.0" y="186.66666666666666" width="314" height="20.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gender: male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLO-IQ-OTp">
                                         <rect key="frame" x="0.0" y="0.0" width="164" height="20.333333333333332"/>
@@ -53,11 +53,18 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="BCU-y0-1tv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="RPZ-Rl-56h"/>
+                    <constraint firstAttribute="bottom" secondItem="BCU-y0-1tv" secondAttribute="bottom" constant="5" id="ePk-oW-CrD"/>
                     <constraint firstItem="BCU-y0-1tv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="v0I-JZ-EpI"/>
                     <constraint firstAttribute="trailing" secondItem="BCU-y0-1tv" secondAttribute="trailing" constant="10" id="v98-5x-2CM"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="genderFavorito" destination="FLO-IQ-OTp" id="hBf-qB-vxY"/>
+                <outlet property="houseFavorito" destination="Zb6-SD-ItW" id="Rzp-Z4-dPy"/>
+                <outlet property="imagenFavorito" destination="9Ul-2s-rDG" id="g2b-Qg-Cze"/>
+                <outlet property="nameFavorito" destination="Kd4-Tz-eWh" id="v3Q-dF-aIu"/>
+            </connections>
             <point key="canvasLocation" x="149.61832061068702" y="79.929577464788736"/>
         </tableViewCell>
     </objects>

@@ -8,10 +8,17 @@
 import UIKit
 
 class FavoritosTableViewCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var genderFavorito: UILabel!
+    @IBOutlet weak var imagenFavorito: UIImageView!
+    @IBOutlet weak var nameFavorito: UILabel!
+    @IBOutlet weak var houseFavorito: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        imagenFavorito.layer.cornerRadius = 15
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
