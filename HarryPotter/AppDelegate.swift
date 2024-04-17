@@ -23,14 +23,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Obtener la escena de la ventana relevante
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                 // Obtener las ventanas de la escena de la ventana relevante
-                if let window = windowScene.windows.first, let rootViewController = window.rootViewController as? HarryPotterViewController {
-                    // Asignar el harryPotterManager a tu HarryPotterViewController
-                    rootViewController.harryPotterManager = harryPotterManager
+                if let window = windowScene.windows.first {
+                    if let rootViewController = window.rootViewController as? HarryPotterViewController {
+                        // Asignar el harryPotterManager a tu HarryPotterViewController
+                        rootViewController.harryPotterManager = harryPotterManager
+                    }
+                    
+                    if let favoritosViewController = window.rootViewController as? FavoritosViewController {
+                        // Asignar el harryPotterManager a tu FavoritosViewController
+                        favoritosViewController.harryPotterManager = harryPotterManager
+                    }
                 }
             }
 
             return true
         }
+    
+    
 
     // MARK: UISceneSession Lifecycle
 

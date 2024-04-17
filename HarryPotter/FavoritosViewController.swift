@@ -13,14 +13,32 @@ class FavoritosViewController: UIViewController {
     @IBOutlet weak var searchbarFavoritos: UITextField!
     @IBOutlet weak var tablaFavoritos: UITableView!
     
+    // MARK: - Variables
+    var harryPotterManager: HarryPotterManager! = nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        harryPotterManager = HarryPotterManager(container: appDelegate.persistentContainer)
 
+        harryPotterManager.delegado = self
+        
         tablaFavoritos.delegate = self
         tablaFavoritos.dataSource = self
+        
+        //metodo para buscar en la lista
+        harryPotterManager.imprimirPersonajesFavoritos()
     }
 
+}
+
+// MARK: - Delegado HarryPotter
+extension FavoritosViewController: harryPotterManagerDelegado{
+    func mostrarPersonajesHarryPotter(lista: [Personaje]) {
+
+    }
 }
 
 // MARK: - Tabla
@@ -31,7 +49,7 @@ extension FavoritosViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tablaFavoritos.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
-        celda.textLabel?.text = "Harry"
+        celda.textLabel?.text = "Favoritos"
         return celda
     }
        

@@ -10,6 +10,8 @@
 		9E854E63AAC9900187F88B42 /* Pods_HarryPotter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1BB098ECB2970FDACEF141 /* Pods_HarryPotter.framework */; };
 		FC780C2B2BCDCE5E008CC4CF /* HarryPotterDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC780C292BCDCE5D008CC4CF /* HarryPotterDataModel.xcdatamodeld */; };
 		FC780C332BCF216C008CC4CF /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC780C322BCF216C008CC4CF /* FavoritosViewController.swift */; };
+		FC780C362BD03870008CC4CF /* FavoritosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC780C342BD03870008CC4CF /* FavoritosTableViewCell.swift */; };
+		FC780C372BD03870008CC4CF /* FavoritosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC780C352BD03870008CC4CF /* FavoritosTableViewCell.xib */; };
 		FCBC9CD12BBF479C0060BDD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC9CD02BBF479C0060BDD1 /* AppDelegate.swift */; };
 		FCBC9CD32BBF479C0060BDD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC9CD22BBF479C0060BDD1 /* SceneDelegate.swift */; };
 		FCBC9CD52BBF479C0060BDD1 /* HarryPotterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC9CD42BBF479C0060BDD1 /* HarryPotterViewController.swift */; };
@@ -29,6 +31,8 @@
 		DE1BB098ECB2970FDACEF141 /* Pods_HarryPotter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarryPotter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC780C2A2BCDCE5D008CC4CF /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
 		FC780C322BCF216C008CC4CF /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
+		FC780C342BD03870008CC4CF /* FavoritosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosTableViewCell.swift; sourceTree = "<group>"; };
+		FC780C352BD03870008CC4CF /* FavoritosTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritosTableViewCell.xib; sourceTree = "<group>"; };
 		FCBC9CCD2BBF479C0060BDD1 /* HarryPotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarryPotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBC9CD02BBF479C0060BDD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCBC9CD22BBF479C0060BDD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 				FCBC9CE92BBF4EA10060BDD1 /* CeldaPersonajeTableViewCell.xib */,
 				FCBC9CEC2BC469440060BDD1 /* DetallePersonajeViewController.swift */,
 				FC780C292BCDCE5D008CC4CF /* HarryPotterDataModel.xcdatamodeld */,
+				FC780C342BD03870008CC4CF /* FavoritosTableViewCell.swift */,
+				FC780C352BD03870008CC4CF /* FavoritosTableViewCell.xib */,
 			);
 			path = HarryPotter;
 			sourceTree = "<group>";
@@ -173,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCBC9CDD2BBF479D0060BDD1 /* LaunchScreen.storyboard in Resources */,
+				FC780C372BD03870008CC4CF /* FavoritosTableViewCell.xib in Resources */,
 				FCBC9CDA2BBF479D0060BDD1 /* Assets.xcassets in Resources */,
 				FCBC9CD82BBF479C0060BDD1 /* Main.storyboard in Resources */,
 				FCBC9CEB2BBF4EA10060BDD1 /* CeldaPersonajeTableViewCell.xib in Resources */,
@@ -231,6 +238,7 @@
 				FCBC9CE72BBF4AB50060BDD1 /* DatosPersonaje.swift in Sources */,
 				FC780C2B2BCDCE5E008CC4CF /* HarryPotterDataModel.xcdatamodeld in Sources */,
 				FCBC9CEA2BBF4EA10060BDD1 /* CeldaPersonajeTableViewCell.swift in Sources */,
+				FC780C362BD03870008CC4CF /* FavoritosTableViewCell.swift in Sources */,
 				FCBC9CD52BBF479C0060BDD1 /* HarryPotterViewController.swift in Sources */,
 				FCBC9CD12BBF479C0060BDD1 /* AppDelegate.swift in Sources */,
 				FCBC9CE52BBF4A560060BDD1 /* HarryPotterManager.swift in Sources */,
