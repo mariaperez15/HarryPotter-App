@@ -8,58 +8,73 @@
 import UIKit
 
 class FavoritosViewController: UIViewController {
-
+    
     // MARK: - IBOutlets
-    @IBOutlet weak var searchbarFavoritos: UITextField!
     @IBOutlet weak var tablaFavoritos: UITableView!
     
     // MARK: - Variables
-    var harryPotterManager: HarryPotterManager! = nil
+    var harryPotterManager: HarryPotterManager!
+    var personajesFavoritos: [PersonajeFavorito] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //registrar nueva celda
-        tablaFavoritos.register(UINib(nibName: "FavoritosTableViewCell", bundle: nil), forCellReuseIdentifier: "celda")
+        // Registrar nueva celda
+        tablaFavoritos.register(UINib(nibName: "FavoritosTableViewCell", bundle: nil), forCellReuseIdentifier: "FavoritosTableViewCell")
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        harryPotterManager = HarryPotterManager(container: appDelegate.persistentContainer)
-
-        harryPotterManager.delegado = self
-        
-        tablaFavoritos.delegate = self
+        // Establecer el dataSource de la tabla
         tablaFavoritos.dataSource = self
         
-        //metodo para buscar en la lista
-        harryPotterManager.imprimirPersonajesFavoritos()
+        // Cargar los personajes favoritos al cargar la vista
+        cargarPersonajesFavoritos()
     }
-
-}
-
-// MARK: - Delegado HarryPotter
-extension FavoritosViewController: harryPotterManagerDelegado{
-    func mostrarPersonajesHarryPotter(lista: [Personaje]) {
-
+    
+    // Función para cargar los personajes favoritos
+    func cargarPersonajesFavoritos() {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            let harryPotterManager = HarryPotterManager(container: appDelegate.persistentContainer)
+            self.personajesFavoritos = harryPotterManager.recuperarPersonajesFavoritos()
+            self.tablaFavoritos.reloadData()
+        }
     }
 }
 
 // MARK: - Tabla
-extension FavoritosViewController: UITableViewDelegate, UITableViewDataSource {
+extension FavoritosViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        print(personajesFavoritos.count)
+
+        
+        return personajesFavoritos.count
+        
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celda = tablaFavoritos.dequeueReusableCell(withIdentifier: "celda", for: indexPath) as! FavoritosTableViewCell
-        celda.nameFavorito.text = "Favoritos"
-        celda.genderFavorito.text = "Fav"
-        celda.houseFavorito.text = "Fav"
-        celda.imagenFavorito.image = UIImage(named: "HarryPotter")
+        let celda = tablaFavoritos.dequeueReusableCell(withIdentifier: "FavoritosTableViewCell", for: indexPath) as! FavoritosTableViewCell
         
-        //celda imagen desde URL
+        let personajeFavorito = personajesFavoritos[indexPath.row]
+        
+        celda.nameFavorito.text = personajeFavorito.name ?? ""
+        celda.genderFavorito.text = "Gender: \(personajeFavorito.gender ?? "")"
+        celda.houseFavorito.text = "House: \(personajeFavorito.house ?? "")"
+        
+        if let imageName = personajeFavorito.image, let image = UIImage(named: imageName) {
+            celda.imagenFavorito.image = image
+        } else {
+            // Si no hay una imagen disponible, puedes asignar una imagen predeterminada o dejarla en blanco
+            celda.imagenFavorito.image = UIImage(named: "imagen_predeterminada")
+        }
+        
+        
+        //if let imageData = personaje.image {
+        //    if let image = UIImage(data: imageData) {
+        //        celda.imagenFavorito.image = image
+         //   }
+        //}
+        
         
         return celda
     }
-       
-   }
+}

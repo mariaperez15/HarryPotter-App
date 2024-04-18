@@ -16,10 +16,11 @@ class FavoritosTableViewCell: UITableViewCell {
     @IBOutlet weak var houseFavorito: UILabel!
     
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        imagenFavorito.layer.cornerRadius = 15
-    }
+    //override func awakeFromNib() {
+      //  super.awakeFromNib()
+      //  imagenFavorito.layer.cornerRadius = 15
+    //}
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

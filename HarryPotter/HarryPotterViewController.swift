@@ -9,7 +9,7 @@ import UIKit
 import Toast_Swift
 
 protocol harryPotterManagerDelegado {
-    func mostrarPersonajesHarryPotter(lista: [Personaje])
+    func mostrarPersonajesFavoritos(lista: [Personaje])
 }
 
 class HarryPotterViewController: UIViewController {
@@ -80,7 +80,7 @@ extension HarryPotterViewController : UITextFieldDelegate {
 
 // MARK: - Delegado Harry Potter
 extension HarryPotterViewController: harryPotterManagerDelegado {
-    func mostrarPersonajesHarryPotter(lista: [Personaje]) {
+    func mostrarPersonajesFavoritos(lista: [Personaje]) {
         personajes = lista
         
         DispatchQueue.main.async {
