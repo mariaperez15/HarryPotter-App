@@ -6,7 +6,6 @@
         <attribute name="gender" optional="YES" attributeType="String"/>
         <attribute name="house" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
-        <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="species" optional="YES" attributeType="String"/>
     </entity>

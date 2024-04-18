@@ -28,7 +28,36 @@ class FavoritosViewController: UIViewController {
         
         // Cargar los personajes favoritos al cargar la vista
         cargarPersonajesFavoritos()
+        
+        // Configurar el mensaje de "No hay personajes favoritos" si no hay personajes favoritos
+        configureNoDataLabelIfNeeded()
+        
+
     }
+    
+    func configureNoDataLabelIfNeeded() {
+        if personajesFavoritos.isEmpty {
+            configureNoDataLabel()
+            tablaFavoritos.tableHeaderView?.isHidden = false
+        } else {
+            tablaFavoritos.tableHeaderView?.isHidden = true
+        }
+    }
+    
+    func configureNoDataLabel() {
+        let messageLabel = UILabel(frame: CGRect(x: 40, y: 140, width: tablaFavoritos.bounds.size.width, height: tablaFavoritos.bounds.size.height))
+        messageLabel.text = "Todavía no hay personajes favoritos"
+        messageLabel.textColor = UIColor.gray
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont.systemFont(ofSize: 20)
+        messageLabel.sizeToFit()
+
+        
+
+        view.addSubview(messageLabel)
+    }
+
     
     // Función para cargar los personajes favoritos
     func cargarPersonajesFavoritos() {
@@ -36,6 +65,9 @@ class FavoritosViewController: UIViewController {
             let harryPotterManager = HarryPotterManager(container: appDelegate.persistentContainer)
             self.personajesFavoritos = harryPotterManager.recuperarPersonajesFavoritos()
             self.tablaFavoritos.reloadData()
+            
+            // Configurar el mensaje de "No hay personajes favoritos" si no hay personajes favoritos
+            configureNoDataLabelIfNeeded()
         }
     }
 }
@@ -44,36 +76,26 @@ class FavoritosViewController: UIViewController {
 extension FavoritosViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(personajesFavoritos.count)
-
         
         return personajesFavoritos.count
-        
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tablaFavoritos.dequeueReusableCell(withIdentifier: "FavoritosTableViewCell", for: indexPath) as! FavoritosTableViewCell
         
-        let personajeFavorito = personajesFavoritos[indexPath.row]
-        
-        celda.nameFavorito.text = personajeFavorito.name ?? ""
-        celda.genderFavorito.text = "Gender: \(personajeFavorito.gender ?? "")"
-        celda.houseFavorito.text = "House: \(personajeFavorito.house ?? "")"
-        
-        if let imageName = personajeFavorito.image, let image = UIImage(named: imageName) {
-            celda.imagenFavorito.image = image
+        if(personajesFavoritos.count < 1){
+            configureNoDataLabel()
+            tablaFavoritos.tableHeaderView?.isHidden = false
         } else {
-            // Si no hay una imagen disponible, puedes asignar una imagen predeterminada o dejarla en blanco
-            celda.imagenFavorito.image = UIImage(named: "imagen_predeterminada")
+            tablaFavoritos.tableHeaderView?.isHidden = true
         }
         
-        
-        //if let imageData = personaje.image {
-        //    if let image = UIImage(data: imageData) {
-        //        celda.imagenFavorito.image = image
-         //   }
-        //}
-        
+            let personajeFavorito = personajesFavoritos[indexPath.row]
+            celda.nameFavorito.text = personajeFavorito.name ?? ""
+            celda.genderFavorito.text = "Gender: \(personajeFavorito.gender ?? "")"
+            celda.houseFavorito.text = "House: \(personajeFavorito.house ?? "")"
+
         
         return celda
     }

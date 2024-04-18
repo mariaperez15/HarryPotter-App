@@ -11,7 +11,6 @@ class FavoritosTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var genderFavorito: UILabel!
-    @IBOutlet weak var imagenFavorito: UIImageView!
     @IBOutlet weak var nameFavorito: UILabel!
     @IBOutlet weak var houseFavorito: UILabel!
     

@@ -21,6 +21,7 @@ struct HarryPotterManager {
     func verPersonajes() {
         let urlString = "https://hp-api.onrender.com/api/characters"
         
+        
         AF.request(urlString).responseDecodable(of: [Personaje].self) { response in
             switch response.result {
             case .success(let personajes):
@@ -42,8 +43,9 @@ struct HarryPotterManager {
         personajeFavorito.ancestry = personaje.ancestry
         personajeFavorito.gender = personaje.gender
         personajeFavorito.species = personaje.species
-        personajeFavorito.image = personaje.image
         
+        
+        // Guardar los cambios en el contexto
         do {
             try context.save()
             print("Personaje favorito '\(personaje.name)' guardado exitosamente")
@@ -51,6 +53,7 @@ struct HarryPotterManager {
             print("Error al guardar el personaje favorito: \(error.localizedDescription)")
         }
     }
+
     
     
     func eliminarPersonajeFavorito(withId id: String) {
@@ -91,17 +94,12 @@ struct HarryPotterManager {
             for personajeFavorito in personajesFavoritos {
                 if let name = personajeFavorito.name {
                     print("Nombre: \(name)")
-                }                
-                if let gender = personajeFavorito.gender {
-                    print(gender)
-                }
-                if let image = personajeFavorito.image {
-                    print(image)
                 }
 
             }
             print("------")
-            print(personajesFavoritos)
+            print("Cantidad de personajes favoritos recuperados:", personajesFavoritos.count)
+
             
             return personajesFavoritos
             
