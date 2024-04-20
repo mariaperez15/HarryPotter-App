@@ -126,7 +126,7 @@
                </Location>
                <Location
                   uuid = "169423C2-B8FC-4B43-BC6A-F85A958DF5A1 - 60f4b99a1e521304"
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "HarryPotter.CeldaPersonajeTableViewCell.genderPersonaje.setter : Swift.Optional&lt;__C.UILabel&gt;"
@@ -212,10 +212,10 @@
             filePath = "HarryPotter/HarryPotterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "favoriteButtonTapped(_:)"
-            landmarkType = "7">
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "HarryPotterViewController"
+            landmarkType = "21">
             <Locations>
                <Location
                   uuid = "7B764E17-5297-450D-8B04-D8031CEFB3FD - 491a8047bb22aee0"
@@ -354,6 +354,54 @@
                   startingLineNumber = "24"
                   endingLineNumber = "24"
                   offsetFromSymbolStart = "388">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7BCAAA9F-B552-46E2-A5C6-69C3460D1467"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarryPotter/FavoritosViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "FavoritosViewController"
+            landmarkType = "21">
+            <Locations>
+               <Location
+                  uuid = "7BCAAA9F-B552-46E2-A5C6-69C3460D1467 - f5f2f9a541d28081"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarryPotter.FavoritosViewController.tableView(_: __C.UITableView, heightForRowAt: Foundation.IndexPath) -&gt; CoreGraphics.CGFloat"
+                  moduleName = "HarryPotter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mariaperez/Documents/UPSA/iOS/HarryPotter%20/HarryPotter/FavoritosViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "7BCAAA9F-B552-46E2-A5C6-69C3460D1467 - f5f2f9a541d28060"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarryPotter.FavoritosViewController.tableView(_: __C.UITableView, heightForRowAt: Foundation.IndexPath) -&gt; CoreGraphics.CGFloat"
+                  moduleName = "HarryPotter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mariaperez/Documents/UPSA/iOS/HarryPotter%20/HarryPotter/FavoritosViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "36">
                </Location>
             </Locations>
          </BreakpointContent>

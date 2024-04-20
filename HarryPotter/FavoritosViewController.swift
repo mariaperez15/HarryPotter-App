@@ -25,6 +25,7 @@ class FavoritosViewController: UIViewController {
         
         // Establecer el dataSource de la tabla
         tablaFavoritos.dataSource = self
+        tablaFavoritos.delegate = self
         
         // Cargar los personajes favoritos al cargar la vista
         cargarPersonajesFavoritos()
@@ -32,7 +33,6 @@ class FavoritosViewController: UIViewController {
         // Configurar el mensaje de "No hay personajes favoritos" si no hay personajes favoritos
         configureNoDataLabelIfNeeded()
         
-
     }
     
     func configureNoDataLabelIfNeeded() {
@@ -81,6 +81,7 @@ extension FavoritosViewController: UITableViewDataSource {
         
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tablaFavoritos.dequeueReusableCell(withIdentifier: "FavoritosTableViewCell", for: indexPath) as! FavoritosTableViewCell
         
@@ -91,12 +92,30 @@ extension FavoritosViewController: UITableViewDataSource {
             tablaFavoritos.tableHeaderView?.isHidden = true
         }
         
-            let personajeFavorito = personajesFavoritos[indexPath.row]
-            celda.nameFavorito.text = personajeFavorito.name ?? ""
-            celda.genderFavorito.text = "Gender: \(personajeFavorito.gender ?? "")"
-            celda.houseFavorito.text = "House: \(personajeFavorito.house ?? "")"
+        celda.layer.borderWidth = 1.0
+        celda.layer.borderColor = UIColor.systemYellow.cgColor
+        celda.layer.cornerRadius = 8
+        celda.backgroundColor = UIColor(red: 1.0, green: 0.9, blue: 0.6, alpha: 1.0)
+        celda.layoutMargins.bottom = 20
+
+        
+        let personajeFavorito = personajesFavoritos[indexPath.row]
+        celda.nameFavorito.text = personajeFavorito.name ?? ""
+        celda.genderFavorito.text = "Gender: \(personajeFavorito.gender ?? "")"
+        celda.houseFavorito.text = "House: \(personajeFavorito.house ?? "")"
 
         
         return celda
     }
+}
+
+// Define la altura de cada celda
+extension FavoritosViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+        let cellHeight: CGFloat = 100
+        
+        return cellHeight
+    }
+    
 }

@@ -17,28 +17,42 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="j8b-Tw-zPn">
-                        <rect key="frame" x="10" y="0.0" width="334" height="200.33333333333334"/>
+                        <rect key="frame" x="10" y="0.0" width="334" height="209.33333333333334"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7tm-ZI-Bad">
-                                <rect key="frame" x="0.0" y="0.0" width="334" height="120"/>
+                                <rect key="frame" x="0.0" y="5" width="334" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="PQF-Oz-trs"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harry Potter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xP-j6-fEW">
-                                <rect key="frame" x="0.0" y="125" width="334" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="7qT-Up-dls"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zg1-O7-Uui">
+                                <rect key="frame" x="0.0" y="130" width="334" height="34.333333333333343"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harry Potter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xP-j6-fEW">
+                                        <rect key="frame" x="0.0" y="0.0" width="289" height="34.333333333333336"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="7qT-Up-dls"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="0AH-Gi-Sdo">
+                                        <rect key="frame" x="294" y="0.0" width="40" height="34.333333333333336"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="5ay-YU-afh"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="0.74934378400000001" blue="0.55276149060000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="star" catalog="system" cornerStyle="medium"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7kW-rM-az7">
-                                <rect key="frame" x="0.0" y="180" width="334" height="20.333333333333343"/>
+                                <rect key="frame" x="0.0" y="169.33333333333334" width="334" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender: male" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7x-Xn-bTi">
-                                        <rect key="frame" x="0.0" y="0.0" width="162" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="mhP-29-KOk"/>
                                         </constraints>
@@ -47,7 +61,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House:  Gryffindor" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nga-zT-kL5">
-                                        <rect key="frame" x="172" y="0.0" width="162" height="20.333333333333332"/>
+                                        <rect key="frame" x="172" y="0.0" width="162" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -55,13 +69,10 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="7tm-ZI-Bad" firstAttribute="top" secondItem="j8b-Tw-zPn" secondAttribute="top" constant="5" id="aOR-I0-gx7"/>
+                        </constraints>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AH-Gi-Sdo">
-                        <rect key="frame" x="278" y="134" width="63" height="33"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="★"/>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="j8b-Tw-zPn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Sz6-xf-UiK"/>
@@ -81,4 +92,7 @@
             <point key="canvasLocation" x="163.35877862595419" y="85.91549295774648"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
+    </resources>
 </document>

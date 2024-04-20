@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:HarryPotter/PersonajeFavorito+CoreDataClass.swift">
+      location = "absolute:/Users/mariaperez/Documents/UPSA/iOS/HarryPotter /HarryPotter/PersonajeFavorito+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:HarryPotter/PersonajeFavorito+CoreDataProperties.swift">
+      location = "absolute:/Users/mariaperez/Documents/UPSA/iOS/HarryPotter /HarryPotter/PersonajeFavorito+CoreDataProperties.swift">
    </FileRef>
    <FileRef
       location = "group:HarryPotter.xcodeproj">

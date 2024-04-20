@@ -92,9 +92,10 @@ struct HarryPotterManager {
             
             print("Personajes en favoritos:")
             for personajeFavorito in personajesFavoritos {
-                if let name = personajeFavorito.name {
-                    print("Nombre: \(name)")
+                if let id = personajeFavorito.id {
+                    print("Id: \(id)")
                 }
+                
 
             }
             print("------")
@@ -116,7 +117,7 @@ struct HarryPotterManager {
         
         print("Personajes en favoritos: ")
         for personajeFavorito in personajesFavoritos {
-            print("Nombre: \(personajeFavorito.name)")
+            print("Nombre: \(personajeFavorito.name ?? "")")
 
         }
         print("------")

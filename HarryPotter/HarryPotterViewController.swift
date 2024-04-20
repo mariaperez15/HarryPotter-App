@@ -30,7 +30,6 @@ class HarryPotterViewController: UIViewController {
     
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,9 +49,11 @@ class HarryPotterViewController: UIViewController {
         //Ejecutar el metodo para buscar la lista de personajes
         harryPotterManager.verPersonajes()
         
-        personajesFilrados = personajes
+        //personajesFilrados = personajes
+        
     }
 }
+
 
 // MARK: - Textfield as SearchBar
 extension HarryPotterViewController : UITextFieldDelegate {
@@ -89,7 +90,6 @@ extension HarryPotterViewController: harryPotterManagerDelegado {
         }
     }
     
-    
 }
 
 // MARK: - Tabla
@@ -101,20 +101,29 @@ extension HarryPotterViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tablaHarryPotter.dequeueReusableCell(withIdentifier: "celda", for: indexPath) as! CeldaPersonajeTableViewCell
         
+        // Restablecer el estado del botón de favoritos
+            celda.favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+        
         celda.nombrePersonaje.text = personajesFilrados[indexPath.row].name
         celda.genderPersonaje.text = "Gender: \(personajesFilrados[indexPath.row].gender)"
         celda.housePersonaje.text =  "House: \(personajesFilrados[indexPath.row].house)"
         celda.favoriteButton.tag = indexPath.row
         celda.favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped(_:)), for: .touchUpInside)
-
+        
+        
+        // Verificar si el personaje está en la lista de favoritos y actualizar el estado del botón
+        let personajeId = personajesFilrados[indexPath.row].id
+           let isFavorite = harryPotterManager.recuperarPersonajesFavoritos(withId: personajeId).count > 0
+           let imageName = isFavorite ? "star.fill" : "star"
+           celda.favoriteButton.setImage(UIImage(systemName: imageName), for: .normal)
+           
         
         
         //celda imagen desde URL
         if let urlString = personajesFilrados[indexPath.row].image as? String {
             if let imageURL = URL(string: urlString) {
                 DispatchQueue.global().async {
-                    guard let imagenData = try? Data(contentsOf: imageURL) else 
-                        { return }
+                    guard let imagenData = try? Data(contentsOf: imageURL) else { return }
                     let image = UIImage(data: imagenData)
                     DispatchQueue.main.async {
                         celda.imagenPersonaje.image = image
@@ -126,10 +135,10 @@ extension HarryPotterViewController: UITableViewDelegate, UITableViewDataSource 
         
         return celda
     }
-
-
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
-        personajeSeleccionado = personajesFilrados[indexPath.row]
+        personajeSeleccionado = personajes[indexPath.row]
         
         performSegue(withIdentifier: "verPersonajes", sender: self)
         
@@ -143,7 +152,7 @@ extension HarryPotterViewController: UITableViewDelegate, UITableViewDataSource 
             verPersonajes.personajeMostrar = personajeSeleccionado
         }
     }
- 
+    
     
     @objc func favoriteButtonTapped(_ sender: UIButton) {
         print("Botón de favorito presionado")
@@ -160,15 +169,18 @@ extension HarryPotterViewController: UITableViewDelegate, UITableViewDataSource 
         if let personajeFavoritoExistente = personajeFavoritoExistente {
             harryPotterManager.eliminarPersonajeFavorito(withId: personajeFavoritoExistente.id!)
             view.makeToast("\(personaje.name) eliminado de favoritos")
+            sender.setImage(UIImage(systemName: "star"), for: .normal)
         } else {
             harryPotterManager.guardarPersonajeFavorito(personaje)
+            
             view.makeToast("\(personaje.name) guardado como favorito")
-        }
+            sender.setImage(UIImage(systemName: "star.fill"), for: .normal)        }
         
         harryPotterManager.imprimirPersonajesFavoritos()
     }
-
     
     
-
 }
+
+
+
