@@ -17,30 +17,27 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="j8b-Tw-zPn">
-                        <rect key="frame" x="10" y="0.0" width="334" height="209.33333333333334"/>
+                        <rect key="frame" x="10" y="0.0" width="334" height="245"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7tm-ZI-Bad">
-                                <rect key="frame" x="0.0" y="5" width="334" height="120"/>
+                                <rect key="frame" x="0.0" y="0.0" width="334" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="PQF-Oz-trs"/>
+                                    <constraint firstAttribute="height" constant="120" identifier="altura imagen celda personajes" id="PQF-Oz-trs"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zg1-O7-Uui">
-                                <rect key="frame" x="0.0" y="130" width="334" height="34.333333333333343"/>
+                                <rect key="frame" x="0.0" y="125" width="334" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harry Potter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xP-j6-fEW">
-                                        <rect key="frame" x="0.0" y="0.0" width="289" height="34.333333333333336"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="7qT-Up-dls"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="289" height="45"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="0AH-Gi-Sdo">
-                                        <rect key="frame" x="294" y="0.0" width="40" height="34.333333333333336"/>
+                                        <rect key="frame" x="294" y="0.0" width="40" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="5ay-YU-afh"/>
+                                            <constraint firstAttribute="width" constant="40" identifier="anchura boton fav celda" id="5ay-YU-afh"/>
                                         </constraints>
                                         <color key="tintColor" red="1" green="0.74934378400000001" blue="0.55276149060000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
@@ -49,36 +46,33 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7kW-rM-az7">
-                                <rect key="frame" x="0.0" y="169.33333333333334" width="334" height="40"/>
+                                <rect key="frame" x="0.0" y="175" width="334" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender: male" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7x-Xn-bTi">
-                                        <rect key="frame" x="0.0" y="0.0" width="162" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="mhP-29-KOk"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="70"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House:  Gryffindor" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nga-zT-kL5">
-                                        <rect key="frame" x="172" y="0.0" width="162" height="40"/>
+                                        <rect key="frame" x="172" y="0.0" width="162" height="70"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" identifier="altura gender y house celda" id="2JP-l9-JQW"/>
+                                </constraints>
                             </stackView>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="7tm-ZI-Bad" firstAttribute="top" secondItem="j8b-Tw-zPn" secondAttribute="top" constant="5" id="aOR-I0-gx7"/>
-                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="j8b-Tw-zPn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Sz6-xf-UiK"/>
-                    <constraint firstItem="j8b-Tw-zPn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="TWE-kV-w9U"/>
-                    <constraint firstAttribute="bottom" secondItem="j8b-Tw-zPn" secondAttribute="bottom" constant="5" id="UQ5-UM-WQL"/>
-                    <constraint firstAttribute="trailing" secondItem="j8b-Tw-zPn" secondAttribute="trailing" constant="10" id="eP3-NW-7L4"/>
+                    <constraint firstItem="j8b-Tw-zPn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" identifier="margen superior celda personaje" id="Sz6-xf-UiK"/>
+                    <constraint firstItem="j8b-Tw-zPn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" identifier="margen izquierdo celda personaje" id="TWE-kV-w9U"/>
+                    <constraint firstAttribute="bottom" secondItem="j8b-Tw-zPn" secondAttribute="bottom" constant="5" identifier="margen inferior celda personaje" id="UQ5-UM-WQL"/>
+                    <constraint firstAttribute="trailing" secondItem="j8b-Tw-zPn" secondAttribute="trailing" constant="10" identifier="margen derecho celda personaje" id="eP3-NW-7L4"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
