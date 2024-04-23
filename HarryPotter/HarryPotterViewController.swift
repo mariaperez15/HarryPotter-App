@@ -121,14 +121,17 @@ extension HarryPotterViewController: UITableViewDelegate, UITableViewDataSource 
         
         //celda imagen desde URL
         let urlString = personajesFilrados[indexPath.row].image
-            if let imageURL = URL(string: urlString) {
-                DispatchQueue.global().async {
-                    guard let imagenData = try? Data(contentsOf: imageURL) else { return }
-                    let image = UIImage(data: imagenData)
-                    DispatchQueue.main.async {
-                        celda.imagenPersonaje.image = image
-                    }
+        if !urlString.isEmpty, let imageURL = URL(string: urlString) {
+            DispatchQueue.global().async {
+                guard let imagenData = try? Data(contentsOf: imageURL) else { return }
+                let image = UIImage(data: imagenData)
+                DispatchQueue.main.async {
+                    celda.imagenPersonaje.image = image
                 }
+            }
+        } else {
+
+            celda.imagenPersonaje.image = UIImage(named: "HarryPotter")
         }
         
         
