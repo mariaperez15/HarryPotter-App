@@ -80,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="1063.3587786259541" y="4.9295774647887329"/>
         </scene>
-        <!--Detalle Personaje View Controller-->
+        <!--Detalles personajes-->
         <scene sceneID="6Hd-VE-zLi">
             <objects>
                 <viewController id="jQP-KV-NiQ" customClass="DetallePersonajeViewController" customModule="HarryPotter" customModuleProvider="target" sceneMemberID="viewController">
@@ -153,7 +153,7 @@
                             <constraint firstItem="8mY-PL-ftM" firstAttribute="bottom" secondItem="bN5-6Z-yK6" secondAttribute="bottom" constant="40" identifier="margen superior pantalla dettalles personaje" id="fSr-eG-Wi3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dwN-jo-1Tb"/>
+                    <navigationItem key="navigationItem" title="Detalles personajes" id="dwN-jo-1Tb"/>
                     <connections>
                         <outlet property="actor" destination="1tM-nB-3Xn" id="U6I-sf-69v"/>
                         <outlet property="ancestryPersonaje" destination="LzZ-h0-YBs" id="lLT-yY-hto"/>

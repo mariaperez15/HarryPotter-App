@@ -120,7 +120,7 @@ extension HarryPotterViewController: UITableViewDelegate, UITableViewDataSource 
         
         
         //celda imagen desde URL
-        if let urlString = personajesFilrados[indexPath.row].image as? String {
+        let urlString = personajesFilrados[indexPath.row].image
             if let imageURL = URL(string: urlString) {
                 DispatchQueue.global().async {
                     guard let imagenData = try? Data(contentsOf: imageURL) else { return }
@@ -129,7 +129,6 @@ extension HarryPotterViewController: UITableViewDelegate, UITableViewDataSource 
                         celda.imagenPersonaje.image = image
                     }
                 }
-            }
         }
         
         
@@ -138,7 +137,7 @@ extension HarryPotterViewController: UITableViewDelegate, UITableViewDataSource 
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
-        personajeSeleccionado = personajes[indexPath.row]
+        personajeSeleccionado = personajesFilrados[indexPath.row]
         
         performSegue(withIdentifier: "verPersonajes", sender: self)
         

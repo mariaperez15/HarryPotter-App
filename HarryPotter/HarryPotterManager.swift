@@ -82,7 +82,6 @@ struct HarryPotterManager {
         let context = persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<PersonajeFavorito> = PersonajeFavorito.fetchRequest()
         
-        // Si se proporciona un ID, se agrega un predicado para filtrar por ese ID
         if let id = id {
             fetchRequest.predicate = NSPredicate(format: "id == %@", id)
         }
