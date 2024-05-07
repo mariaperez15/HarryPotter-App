@@ -104,9 +104,9 @@ extension HarryPotterViewController: UITableViewDelegate, UITableViewDataSource 
         // Restablecer el estado del botón de favoritos
             celda.favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
         
-        celda.nombrePersonaje.text = personajesFilrados[indexPath.row].name
-        celda.genderPersonaje.text = "Gender: \(personajesFilrados[indexPath.row].gender)"
-        celda.housePersonaje.text =  "House: \(personajesFilrados[indexPath.row].house)"
+        celda.nombrePersonaje.text = !personajesFilrados[indexPath.row].name.isEmpty ? personajesFilrados[indexPath.row].name : "not available"
+        celda.genderPersonaje.text = "Gender: \(!personajesFilrados[indexPath.row].gender.isEmpty ? personajesFilrados[indexPath.row].gender : "not available")"
+        celda.housePersonaje.text =  "House: \(!personajesFilrados[indexPath.row].house.isEmpty ? personajesFilrados[indexPath.row].house : "not available")"
         celda.favoriteButton.tag = indexPath.row
         celda.favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped(_:)), for: .touchUpInside)
         

@@ -368,10 +368,8 @@
             filePath = "HarryPotter/FavoritosViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "FavoritosViewController"
-            landmarkType = "21">
+            startingLineNumber = "129"
+            endingLineNumber = "129">
             <Locations>
                <Location
                   uuid = "7BCAAA9F-B552-46E2-A5C6-69C3460D1467 - f5f2f9a541d28081"

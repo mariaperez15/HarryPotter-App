@@ -26,14 +26,23 @@ class DetallePersonajeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //imagen mostrar
+        // Cargar imagen
+        let urlString = personajeMostrar?.image ?? ""
+        if !urlString.isEmpty, let imageURL = URL(string: urlString) {
+            imagenPersonaje.loadFrom(URLAddres: urlString)
+        } else {
+            // Si la URL está vacía, cargar la imagen "HarryPotter"
+            imagenPersonaje.image = UIImage(named: "HarryPotter")
+        }
+        
+        //Mostrar detalles del personaje
         imagenPersonaje.loadFrom(URLAddres: personajeMostrar?.image ?? "")
-        namePersonaje.text = "\(personajeMostrar?.name ?? "")"
-        genderPersonaje.text = "Gender: \(personajeMostrar?.gender ?? "")"
-        actor.text = "Actor: \(personajeMostrar?.actor ?? "")"
-        housePersonaje.text = "House: \(personajeMostrar?.house ?? "")"
-        speciesPersonaje.text = "Species: \(personajeMostrar?.species ?? "")"
-        ancestryPersonaje.text = "Ancestry: \(personajeMostrar?.ancestry ?? "")"
+        namePersonaje.text = personajeMostrar?.name.isEmpty ?? true ? "not available" : personajeMostrar?.name
+        genderPersonaje.text = "Gender: \(personajeMostrar?.gender.isEmpty ?? true ? "not available" : personajeMostrar!.gender)"
+        actor.text = "Actor: \(personajeMostrar?.actor.isEmpty ?? true ? "not available" : personajeMostrar!.actor)"
+        housePersonaje.text = "House: \(personajeMostrar?.house.isEmpty ?? true ? "not available" : personajeMostrar!.house)"
+        speciesPersonaje.text = "Species: \(personajeMostrar?.species.isEmpty ?? true ? "not available" : personajeMostrar!.species)"
+        ancestryPersonaje.text = "Ancestry: \(personajeMostrar?.ancestry.isEmpty ?? true ? "not available" : personajeMostrar!.ancestry)"
                 
     }
 
